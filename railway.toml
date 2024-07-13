@@ -1,9 +1,9 @@
 [build]
 builder = "nixpacks"
-buildCommand = "pnpm build:backend"
+buildCommand = "pnpm build"
 
 [deploy]
-startCommand = "pnpm start:backend"
+startCommand = "pnpm start"
 
 [build.nixpacksPlan.phases.install]
 dependsOn=["setup"]
