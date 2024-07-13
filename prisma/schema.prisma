@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_PRIVATE_URL")
+}
+
+model admin {
+  id           Int      @id @default(autoincrement())
+  firstname    String
+  lastname     String
+  email        String   @unique
+  username     String
+  password     String
+  address      String
+  phone        String
+  status       Boolean  @default(false)
+  creationDate DateTime @default(now())
+  updateDate   DateTime @default(now())
+}
+
+model view {
+  id           Int      @id @default(autoincrement())
+  restaurant   String
+  stars        Int
+  creationDate DateTime @default(now())
+}
+
+enum Role {
+  VIEW
+}

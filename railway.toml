@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pnpm build:backend"
+
+[deploy]
+startCommand = "pnpm start:backend"
+
+[build.nixpacksPlan.phases.install]
+dependsOn=["setup"]
+cmds=[ "pnpm install --frozen-lockfile"]

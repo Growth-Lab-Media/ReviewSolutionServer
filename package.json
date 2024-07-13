@@ -1,0 +1,50 @@
+{
+    "name": "backend",
+    "version": "0.0.0",
+    "main": "./app.ts",
+    "types": "./app.ts",
+    "scripts": {
+        "dev": "nodemon app.ts",
+        "build": "pnpm db:generate && tsc",
+        "deploy": "pnpm run build && node build/server.js",
+        "start": "node build/app.js",
+        "db:generate": "npx prisma generate",
+        "db:start": "npx prisma studio",
+        "db:push": "npx prisma db push --accept-data-loss"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.490.0",
+        "@prisma/client": "5.6.0",
+        "@types/bcrypt": "^5.0.2",
+        "@types/facebook-nodejs-business-sdk": "^18.0.0",
+        "@types/jsonwebtoken": "^9.0.6",
+        "@types/morgan": "^1.9.9",
+        "@types/multer": "^1.4.11",
+        "@types/nodemailer": "^6.4.14",
+        "@types/uuid": "^9.0.7",
+        "bcrypt": "^5.1.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "facebook-nodejs-business-sdk": "^18.0.4",
+        "jsonwebtoken": "^9.0.2",
+        "morgan": "^1.10.0",
+        "multer": "1.4.5-lts.1",
+        "net": "^1.0.2",
+        "nodemailer": "^6.9.7",
+        "nodemon": "^3.0.2",
+        "process": "^0.11.10",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "@types/cookie-parser": "^1.4.7",
+        "@types/cors": "^2.8.16",
+        "@types/express": "^4.17.21",
+        "@types/node": "^20.11.0",
+        "prisma": "5.6.0"
+    }
+}
